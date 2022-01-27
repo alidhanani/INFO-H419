@@ -1,0 +1,182 @@
+Q1)
+select sum(F.Departures_Performed) Performed, sum(F.Departures_Scheduled) Scheduled, D.cYear cYear, UC.Unique_Carrier Carrier 
+from Unique_Carrier UC, cDate D, fFlight F
+Where F.Unique_Carrier_ID = UC.Unique_Carrier_ID AND F.Date_ID = D.Date_ID
+Group By D.cYear, UC.Unique_Carrier
+
+Q2)
+select sum(F.Departures_Scheduled) Scheduled, sum(F.Departures_Performed) Performed, G.Country_Name Country, A.Airport Airport, D.cYear
+from cDate D, Geography G, Airport A, fFlight F
+Where D.Date_ID = F.Date_ID AND F.Destination_ID = A.Airport_ID AND D.cYear > YEAR(DATEADD(YEAR, -2, GETDATE()))
+Group By G.Country_Name, A.Airport, D.cYear
+
+Q3)
+select sum(f.Seats) Seats, UC.Unique_Carrier Carrier, DG.Distance_Group Distance_Group
+from Unique_Carrier UC, Distance_Group DG, fFlight F, cDate D
+where F.Unique_Carrier_ID = UC.Unique_Carrier_ID AND F.Distance_Group_ID = DG.Distance_Group_ID AND D.cYear = 2019
+Group by UC.Unique_Carrier, DG.Distance_Group
+
+Q4)
+With MeasureDest As (
+		select sum(F.Passengers) Passenger, AP.Airport Airport
+		from Airport AP, fFlight F, Geography GE
+		where F.Destination_ID = AP.Airport_ID AND AP.Geo_ID = GE.Geo_ID AND GE.City_Name in ( select G.City_Name City
+																	from Airport A, Geography G
+																	where A.Geo_ID = G.Geo_ID
+																	Group by G.City_Name
+																	having count(Airport) > 1
+																	)
+		group by AP.Airport),
+MeasureOrigin As (
+			select sum(F.Passengers) Passenger, AP.Airport Airport
+			from Airport AP, fFlight F, Geography GE
+			where F.Origin_ID = AP.Airport_ID AND AP.Geo_ID = GE.Geo_ID AND GE.City_Name in ( select G.City_Name City
+																		from Airport A, Geography G
+																		where A.Geo_ID = G.Geo_ID
+																		Group by G.City_Name
+																		having count(Airport) > 1
+																		)
+			group by AP.Airport
+)
+
+
+select sum(MD.Passenger) Departing, sum(MO.Passenger) Arriving, sum(MO.Passenger)/sum(MD.Passenger) OriginRatioDeparture, MD.Airport Airport
+from MeasureDest MD, MeasureOrigin MO
+where MD.Airport = Mo.Airport
+group by MD.Airport
+having sum(MD.Passenger) != 0
+
+Q5)
+DECLARE @MyCounter INT;
+SET @MyCounter = (select sum(Answer.Performed) Total
+from (
+select sum(F.Departures_Performed) Performed, UC.Unique_Carrier Carrier 
+from fFlight F, Geography G, Airport A, Unique_Carrier UC, cDate D
+where F.Destination_ID = A.Airport_ID And A.Geo_ID = G.Geo_ID
+And F.Unique_Carrier_ID = UC.Unique_Carrier_ID AND D.cYear = 2020
+Group By G.City_Name, A.Airport, UC.Unique_Carrier
+having sum(F.Departures_Performed) > 5000 ) as Answer);
+
+select Round((sum(F.Departures_Performed)/@MyCounter),5)*100 Percentage, UC.Unique_Carrier Carrier,  G.City_Name, A.Airport
+from fFlight F, Geography G, Airport A, Unique_Carrier UC, cDate D
+where F.Destination_ID = A.Airport_ID And A.Geo_ID = G.Geo_ID
+And F.Unique_Carrier_ID = UC.Unique_Carrier_ID AND D.cYear = 2020
+Group By G.City_Name, A.Airport, UC.Unique_Carrier
+having sum(F.Departures_Performed) > 5000
+
+Q6) Information By Airport
+select A.Airport Airport, sum(F.Passengers) Passenger, Sum(F.Payload) Payload, sum(F.Seats) Seats
+from fFlight F, Airport A
+Where F.Destination_ID = A.Airport_ID
+Group By A.Airport
+
+Q7) Average Payload
+select A.Airport Airport, (Sum(F.Payload)/count(*))  
+from fFlight F, Airport A
+Where F.Destination_ID = A.Airport_ID
+Group By A.Airport
+
+Q8) Payload of Airport by Year and Quarter
+select sum(F.Payload) Payload, A.Airport Airport, D.cYear Year, D.Quarter Quarter   
+from fFlight F, Airport A, cDate D
+Where F.Destination_ID = A.Airport_ID and F.Date_ID = D.Date_ID
+Group By A.Airport, D.cYear, D.Quarter
+Order By A.Airport, D.cYear, D.Quarter 
+
+Q9) All measures by City
+select G.City_Name, sum(F.Passengers) Passengers, sum(F.Payload) Payload, sum(F.Seats) Seats   
+from fFlight F, Airport A, Geography G
+Where F.Destination_ID = A.Airport_ID  and A.Geo_ID = G.Geo_ID
+Group By G.City_Name
+Order By Count(*) Desc
+
+Q10) Top 5 airport based on Payload
+select TOP(5) A.Airport Airport, (Sum(F.Payload)/count(*)) Payload
+from fFlight F, Airport A
+Where F.Destination_ID = A.Airport_ID
+Group By A.Airport
+Order By Count(*) DESC
+
+Q11) Measures in Abu Dhabi
+select G.City_Name City, sum(F.Payload) Payload, sum(F.Passengers) Passengers, sum(F.Seats) Seats
+from fFlight F, Geography G, Airport A
+where F.Destination_ID = A.Airport_ID and A.Geo_ID = G.Geo_ID AND G.Country_Name = 'United Arab Emirates'
+group by G.City_Name
+
+Q12) Measures for first quarter of each year
+Select UC.Unique_Carrier Carrier, D.cYear Year, D.Quarter Quarter, Sum(F.Payload) Payload, sum(F.Seats) Seats, sum(F.Distance) Distance
+from fFlight F, cDate D, Unique_Carrier UC
+where F.Date_ID = D.Date_ID and D.Quarter=1 and F.Unique_Carrier_ID = UC.Unique_Carrier_ID
+group by UC.Unique_Carrier, D.cYear, D.Quarter
+order by UC.Unique_Carrier, D.cYear, D.Quarter
+
+Q13) Ratio of City level with Country Level on bases of Payload
+With MeasureCity As (
+	Select G.City_Name City, G.Country_Name Country, sum(F.Payload) Payload, sum(F.Seats) Seats
+	from Geography G, fFlight F, Airport A
+	Where F.Destination_ID = A.Airport_ID and A.Geo_ID = G.Geo_ID
+	Group By G.City_Name, G.Country_Name
+),
+MeasureCountry As (
+	Select G.Country_Name Country, sum(F.Payload) Payload, sum(F.Seats) Seats
+	from Geography G, fFlight F, Airport A
+	Where F.Destination_ID = A.Airport_ID and A.Geo_ID = G.Geo_ID
+	Group By G.Country_Name
+)
+select Ci.City, Ci.Country, Ci.Payload CityLevel, Co.Payload CountryLevel, Ci.Payload/Co.Payload Ratio
+from MeasureCity Ci, MeasureCountry Co
+where Ci.Country = Co.Country
+Order by Ci.City, Ci.Country
+
+Q14) Aircraft measures on the bases of country
+select G.Country_Name Country, Ai.Aircraft_Type Aircraft_Type, sum(F.Payload) Payload, sum(F.Passengers) Passengers, sum(F.Seats) Seats
+from Aircraft Ai, fFlight F, Geography G, Airport A
+where F.Airport_ID = Ai.Aircraft_ID and F.Destination_ID = A.Airport_ID and A.Geo_ID = G.Geo_ID
+group by G.Country_Name, Ai.Aircraft_Type
+
+Q15) Measure on Class and Country
+select C.cClass Class, G.Country_Name Country, sum(F.Payload) Payload, sum(F.Seats) Seats, sum(F.Passengers) Passengers
+from cClass C, fFlight F, Airport A, Geography G
+where F.Destination_ID = A.Airport_ID and A.Geo_ID = G.Geo_ID and F.Class_ID = C.Class_ID
+group by C.cClass, G.Country_Name
+
+Q16) Measure on Distance Group by Country
+select DG.Distance_Group, G.Country_Name Country, sum(F.Payload) Payload, sum(F.Seats) Seats, sum(F.Passengers) Passengers
+from Distance_Group  DG, fFlight F, Airport A, Geography G
+where F.Destination_ID = A.Airport_ID and A.Geo_ID = G.Geo_ID and F.Distance_Group_ID = DG.Distance_Group_ID
+group by DG.Distance_Group, G.Country_Name
+
+Q17) Payload by Month and payload with respect to the same month in the previous year
+With PayloadOnMonth As (
+	select D.cYear Year, D.cMonth Month, Sum(F.Payload) Payload
+	from fFlight F, cDate D
+	where F.Date_ID = D.Date_ID
+	group by D.cYear, D.cMonth
+)
+select M1.Year, M1.Month, M1.Payload, M2.Payload PrevYear, M1.Payload - ISNULL(M2.Payload,0) Growth
+from PayloadOnMonth M1 Left Outer Join PayloadOnMonth M2 On M1.Year = M2.Year + 1 and M1.Month = M2.Month
+Order by M1.Year, M2.Year
+
+Q18) For every month in 2020, payload and payload difference with respect to the opening month of the quarter
+With PayloadByMonth As (
+	Select D.cMonth Month, D.Quarter Quarter, Sum(F.Payload) Payload
+	from fFlight F, cDate D
+	where F.Date_ID = D.Date_ID and D.cYear = 2020
+	group by D.cMonth, D.Quarter
+)
+select Month, Payload, Payload - FIRST_VALUE(Payload) OVER(PARTITION BY Quarter Order By Month) as PayloadDiff
+from PayloadByMonth
+order by Month
+
+Q19) All Measure of city between 'Aberdeen, MD' and 'Gastonia, NC' in the US
+Select G.City_Name City, Sum(F.Payload) Payload, Count(*) Paycount
+from fFlight F, Airport A, Geography G
+where F.Destination_ID = A.Airport_ID and A.Geo_ID = G.Geo_ID and G.Country_Name = 'United States' and (G.City_Name >= 'Aberdeen, MD' AND G.City_Name <= 'Gastonia, NC')
+group by G.City_Name
+Order by G.City_Name
+
+Q20) Measures with Carrier Name
+select UC.Unique_Carrier Unique_Carrier, C.Carrier_Name Carrier, sum(F.Payload) Payload, sum(F.Seats) Seats, sum(F.Passengers) Passengers
+from fFlight F, Unique_Carrier UC, Carrier C
+where F.Unique_Carrier_ID = UC.Unique_Carrier_ID and UC.Carrier_ID = C.Carrier_ID and C.Carrier_Name != ''
+group by UC.Unique_Carrier, C.Carrier_Name

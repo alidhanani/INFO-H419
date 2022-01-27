@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.record="http:///orgomg/cwm/resource/record.ecore">
+  <TalendMetadata:DelimitedFileConnection xmi:id="_eXsb4FZsEeuOdPjCBYJXRQ" name="newCSV" dataPackage="_eXsb4VZsEeuOdPjCBYJXRQ" Server="Localhost 127.0.0.1" FilePath="C:/Users/HP/Downloads/Downloads/Exam/394257847_T_T100I_SEGMENT_ALL_CARRIER(1).csv" Encoding="US-ASCII" FieldSeparatorValue="&quot;,&quot;" RowSeparatorValue="&quot;\n&quot;" UseHeader="true" HeaderValue="1" FirstLineCaption="true" EscapeType="CSV" TextEnclosure="&quot;\&quot;&quot;" CsvOption="true" FieldSeparatorType="Comma"/>
+  <orgomg.cwm.resource.record:RecordFile xmi:id="_eXsb4VZsEeuOdPjCBYJXRQ" name="default" dataManager="_eXsb4FZsEeuOdPjCBYJXRQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_eXsb4lZsEeuOdPjCBYJXRQ" id="_WPzHsFZsEeuOdPjCBYJXRQ" label="metadata">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_eXsb41ZsEeuOdPjCBYJXRQ" label="DEPARTURES_SCHEDULED" length="4" precision="3" talendType="id_Float" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_eXsb5FZsEeuOdPjCBYJXRQ" label="DEPARTURES_PERFORMED" length="5" precision="3" talendType="id_Float" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_eXsb5VZsEeuOdPjCBYJXRQ" label="PAYLOAD" length="10" precision="3" talendType="id_Float" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_eXsb5lZsEeuOdPjCBYJXRQ" label="SEATS" length="7" precision="3" talendType="id_Float" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_eXsb51ZsEeuOdPjCBYJXRQ" label="PASSENGERS" length="7" precision="3" talendType="id_Float" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_eXsb6FZsEeuOdPjCBYJXRQ" label="FREIGHT" length="10" precision="9" talendType="id_Float" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_eXsb6VZsEeuOdPjCBYJXRQ" label="MAIL" length="4" precision="3" talendType="id_Float" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_eXsb6lZsEeuOdPjCBYJXRQ" label="DISTANCE" length="7" precision="3" talendType="id_Float" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_eXsb61ZsEeuOdPjCBYJXRQ" label="RAMP_TO_RAMP" length="4" precision="3" talendType="id_Float" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_eXsb7FZsEeuOdPjCBYJXRQ" label="AIR_TIME" length="4" precision="3" talendType="id_Float" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_eXsb7VZsEeuOdPjCBYJXRQ" label="UNIQUE_CARRIER" length="3" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_eXsb7lZsEeuOdPjCBYJXRQ" label="AIRLINE_ID" length="5" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_eXsb71ZsEeuOdPjCBYJXRQ" label="UNIQUE_CARRIER_NAME" length="24" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_eXsb8FZsEeuOdPjCBYJXRQ" label="UNIQUE_CARRIER_ENTITY" length="5" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_eXsb8VZsEeuOdPjCBYJXRQ" label="REGION" length="1" talendType="id_Character" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_eXsb8lZsEeuOdPjCBYJXRQ" label="CARRIER" length="3" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_eXsb81ZsEeuOdPjCBYJXRQ" label="CARRIER_NAME" length="24" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_eXsb9FZsEeuOdPjCBYJXRQ" label="CARRIER_GROUP" length="1" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_eXsb9VZsEeuOdPjCBYJXRQ" label="CARRIER_GROUP_NEW" length="1" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_eXsb9lZsEeuOdPjCBYJXRQ" label="ORIGIN_AIRPORT_ID" length="5" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_eXsb91ZsEeuOdPjCBYJXRQ" label="ORIGIN_AIRPORT_SEQ_ID" length="7" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_eXsb-FZsEeuOdPjCBYJXRQ" label="ORIGIN_CITY_MARKET_ID" length="5" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_eXsb-VZsEeuOdPjCBYJXRQ" label="ORIGIN" length="3" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_eXsb-lZsEeuOdPjCBYJXRQ" label="ORIGIN_CITY_NAME" length="40" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_eXsb-1ZsEeuOdPjCBYJXRQ" label="ORIGIN_COUNTRY" length="2" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_eXsb_FZsEeuOdPjCBYJXRQ" label="ORIGIN_COUNTRY_NAME" length="24" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_eXsb_VZsEeuOdPjCBYJXRQ" label="ORIGIN_WAC" length="3" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_eXsb_lZsEeuOdPjCBYJXRQ" label="DEST_AIRPORT_ID" length="5" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_eXsb_1ZsEeuOdPjCBYJXRQ" label="DEST_AIRPORT_SEQ_ID" length="7" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_eXscAFZsEeuOdPjCBYJXRQ" label="DEST_CITY_MARKET_ID" length="5" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_eXscAVZsEeuOdPjCBYJXRQ" label="DEST" length="3" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_eXscAlZsEeuOdPjCBYJXRQ" label="DEST_CITY_NAME" length="40" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_eXscA1ZsEeuOdPjCBYJXRQ" label="DEST_COUNTRY" length="2" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_eXscBFZsEeuOdPjCBYJXRQ" label="DEST_COUNTRY_NAME" length="24" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_eXscBVZsEeuOdPjCBYJXRQ" label="DEST_WAC" length="3" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_eXscBlZsEeuOdPjCBYJXRQ" label="AIRCRAFT_GROUP" length="1" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_eXscB1ZsEeuOdPjCBYJXRQ" label="AIRCRAFT_TYPE" length="3" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_eXscCFZsEeuOdPjCBYJXRQ" label="AIRCRAFT_CONFIG" length="1" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_eXscCVZsEeuOdPjCBYJXRQ" label="YEAR" length="4" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_eXscClZsEeuOdPjCBYJXRQ" label="QUARTER" length="1" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_eXscC1ZsEeuOdPjCBYJXRQ" label="MONTH" length="1" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_eXscDFZsEeuOdPjCBYJXRQ" label="DISTANCE_GROUP" length="2" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_eXscDVZsEeuOdPjCBYJXRQ" label="Column42" length="1" talendType="id_Character" pattern="&quot;dd-MM-yyyy&quot;"/>
+    </ownedElement>
+  </orgomg.cwm.resource.record:RecordFile>
+</xmi:XMI>

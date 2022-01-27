@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.record="http:///orgomg/cwm/resource/record.ecore">
+  <TalendMetadata:DelimitedFileConnection xmi:id="_aUg7kFXCEeuIVZFUiTVbeg" name="Other" dataPackage="_aUg7kVXCEeuIVZFUiTVbeg" Server="Localhost 127.0.0.1" FilePath="C:/Users/HP/Downloads/Downloads/Seperate/Other/846173859_T_T100I_SEGMENT_ALL_CARRIER(1).csv" Encoding="US-ASCII" FieldSeparatorValue="&quot;,&quot;" RowSeparatorValue="&quot;\n&quot;" UseHeader="true" HeaderValue="1" FirstLineCaption="true" FieldSeparatorType="Comma"/>
+  <orgomg.cwm.resource.record:RecordFile xmi:id="_aUg7kVXCEeuIVZFUiTVbeg" name="default" dataManager="_aUg7kFXCEeuIVZFUiTVbeg">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_aUg7klXCEeuIVZFUiTVbeg" id="_V5KKkFXCEeuIVZFUiTVbeg" label="metadata">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_aUg7k1XCEeuIVZFUiTVbeg" label="_DISTANCE_GROUP_" length="1" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_aUg7lFXCEeuIVZFUiTVbeg" label="_CLASS_" length="3" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_aUg7lVXCEeuIVZFUiTVbeg" label="Column2" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+    </ownedElement>
+  </orgomg.cwm.resource.record:RecordFile>
+</xmi:XMI>

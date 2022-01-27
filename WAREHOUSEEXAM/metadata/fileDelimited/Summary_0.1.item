@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.record="http:///orgomg/cwm/resource/record.ecore">
+  <TalendMetadata:DelimitedFileConnection xmi:id="_ul0RkFXCEeuIVZFUiTVbeg" name="Summary" dataPackage="_ul0RkVXCEeuIVZFUiTVbeg" Server="Localhost 127.0.0.1" FilePath="C:/Users/HP/Downloads/Downloads/Seperate/Summary/846173859_T_T100I_SEGMENT_ALL_CARRIER(1).csv" Encoding="US-ASCII" FieldSeparatorValue="&quot;,&quot;" RowSeparatorValue="&quot;\n&quot;" UseHeader="true" HeaderValue="1" FirstLineCaption="true" FieldSeparatorType="Comma"/>
+  <orgomg.cwm.resource.record:RecordFile xmi:id="_ul0RkVXCEeuIVZFUiTVbeg" name="default" dataManager="_ul0RkFXCEeuIVZFUiTVbeg">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_ul0RklXCEeuIVZFUiTVbeg" id="_q-j3AFXCEeuIVZFUiTVbeg" label="metadata">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ul0Rk1XCEeuIVZFUiTVbeg" label="_DEPARTURES_SCHEDULED_" length="4" precision="3" talendType="id_Float" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ul0RlFXCEeuIVZFUiTVbeg" label="_DEPARTURES_PERFORMED_" length="5" precision="4" talendType="id_Float" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ul0RlVXCEeuIVZFUiTVbeg" label="_PAYLOAD_" length="9" precision="8" talendType="id_Float" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ul0RllXCEeuIVZFUiTVbeg" label="_SEATS_" length="8" precision="4" talendType="id_Float" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ul0Rl1XCEeuIVZFUiTVbeg" label="_PASSENGERS_" length="7" precision="4" talendType="id_Float" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ul0RmFXCEeuIVZFUiTVbeg" label="_FREIGHT_" length="10" precision="5" talendType="id_Float" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ul0RmVXCEeuIVZFUiTVbeg" label="_MAIL_" length="6" precision="5" talendType="id_Float" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ul0RmlXCEeuIVZFUiTVbeg" label="_DISTANCE_" length="7" precision="3" talendType="id_Float" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ul0Rm1XCEeuIVZFUiTVbeg" label="_RAMP_TO_RAMP_" length="6" precision="5" talendType="id_Float" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ul0RnFXCEeuIVZFUiTVbeg" label="_AIR_TIME_" length="6" precision="5" talendType="id_Float" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ul0RnVXCEeuIVZFUiTVbeg" label="Column10" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+    </ownedElement>
+  </orgomg.cwm.resource.record:RecordFile>
+</xmi:XMI>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.record="http:///orgomg/cwm/resource/record.ecore">
+  <TalendMetadata:DelimitedFileConnection xmi:id="_Pip7gFXCEeuIVZFUiTVbeg" name="Origin" dataPackage="_Pip7gVXCEeuIVZFUiTVbeg" Server="Localhost 127.0.0.1" FilePath="C:/Users/HP/Downloads/Downloads/Seperate/Origin/846173859_T_T100I_SEGMENT_ALL_CARRIER(1).csv" Encoding="US-ASCII" FieldSeparatorValue="&quot;,&quot;" RowSeparatorValue="&quot;\n&quot;" UseHeader="true" HeaderValue="1" FirstLineCaption="true" FieldSeparatorType="Comma"/>
+  <orgomg.cwm.resource.record:RecordFile xmi:id="_Pip7gVXCEeuIVZFUiTVbeg" name="default" dataManager="_Pip7gFXCEeuIVZFUiTVbeg">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_Pip7glXCEeuIVZFUiTVbeg" id="_AZinUFXCEeuIVZFUiTVbeg" label="metadata">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Pip7g1XCEeuIVZFUiTVbeg" label="_ORIGIN_AIRPORT_ID_" length="5" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Pip7hFXCEeuIVZFUiTVbeg" label="_ORIGIN_AIRPORT_SEQ_ID_" length="7" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Pip7hVXCEeuIVZFUiTVbeg" label="_ORIGIN_CITY_MARKET_ID_" length="5" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Pip7hlXCEeuIVZFUiTVbeg" label="_ORIGIN_" length="5" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Pip7h1XCEeuIVZFUiTVbeg" label="_ORIGIN_CITY_NAME_" length="12" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Pip7iFXCEeuIVZFUiTVbeg" label="_ORIGIN_COUNTRY_" length="16" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Pip7iVXCEeuIVZFUiTVbeg" label="_ORIGIN_COUNTRY_NAME_" length="4" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Pip7ilXCEeuIVZFUiTVbeg" label="_ORIGIN_WAC_" length="16" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Pip7i1XCEeuIVZFUiTVbeg" label="Column8" length="3" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Pip7jFXCEeuIVZFUiTVbeg" label="Column9" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+    </ownedElement>
+  </orgomg.cwm.resource.record:RecordFile>
+</xmi:XMI>
